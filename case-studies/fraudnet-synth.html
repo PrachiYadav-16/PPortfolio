@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FraudNet-Synth case study | Prachi Yadav</title>
+  <meta name="description" content="Product and business analysis case study: how four banks can train one fraud detection model without sharing customer data. Team capstone project.">
+  <meta name="theme-color" content="#b7f34a">
+  <meta property="og:title" content="FraudNet-Synth case study | Prachi Yadav">
+  <meta property="og:description" content="Privacy-preserving fraud detection across four banks: requirements, decisions, trade-offs and results.">
+  <meta property="og:image" content="../assets/img/fraudnet-overview.webp">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html" aria-label="Prachi Yadav, home">Prachi Yadav</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#how-i-work">How I work</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-dark btn-small" href="../assets/resume/Prachi_Yadav_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="crumb" href="../index.html#projects"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>All case studies</a>
+    <h1>FraudNet-<span class="it">Synth</span></h1>
+    <p class="lead">How can four banks build one fraud detection model together when none of them is allowed to share its customers' data?</p>
+    <dl class="facts">
+      <div><dt>Category</dt><dd>FinTech, data privacy, machine learning</dd></div>
+      <div><dt>Context</dt><dd>Final-year capstone, PESITM (VTU), 2026</dd></div>
+      <div><dt>Team</dt><dd>4 students, guided by Dr. Chethan L S</dd></div>
+      <div><dt>My role</dt><dd>Research, approach, Bank B node, presentation</dd></div>
+    </dl>
+    <div class="cs-links">
+      <a class="btn btn-dark" href="https://github.com/shubhamrajput27/fraudnet-synth" target="_blank" rel="noopener">View repository
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a class="btn btn-light" href="#perspectives">Jump to decisions</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap cs-cover rv">
+  <figure class="shot" style="margin:0"><img src="../assets/img/fraudnet-overview.webp" alt="FraudNet-Synth dashboard: four bank cards, synthetic data pass rates and rejection reasons" width="1400" height="907"></figure>
+</div>
+
+<div class="wrap cs-body">
+  <nav class="toc" aria-label="On this page" data-spy>
+    <b>On this page</b>
+    <a href="#overview">Overview</a>
+    <a href="#role">My contribution</a>
+    <a href="#problem">Problem</a>
+    <a href="#users">Users and context</a>
+    <a href="#perspectives">Decisions and requirements</a>
+    <a href="#implementation">Implementation</a>
+    <a href="#validation">Testing and validation</a>
+    <a href="#outcomes">Outcomes and learnings</a>
+    <a href="#future">Future opportunities</a>
+  </nav>
+
+  <article>
+    <section class="cs-sec" id="overview">
+      <span class="eyebrow">01 · Overview</span>
+      <h2>Share what the model learned, not the data.</h2>
+      <p>Four simulated banks each hold a private slice of a public, anonymized credit card fraud dataset (ULB, Kaggle). Instead of pooling their data, they train one shared model with federated learning: each bank trains on its own rows and sends back only model weights. Banks with very few fraud examples can also add synthetic fraud data, which must pass a shared quality and privacy check before it is used.</p>
+      <p>The team then tested whether this works by comparing six set-ups: each bank alone, banks federated, and all data pooled in one place, each with and without synthetic data, across five runs.</p>
+      <div class="stats">
+        <div class="stat"><b>4</b><span>simulated banks, each with private data</span></div>
+        <div class="stat"><b>3</b><span>user roles: admin, bank operator, viewer</span></div>
+        <div class="stat"><b>6</b><span>set-ups compared, each over 5 runs</span></div>
+        <div class="stat"><b>86</b><span>automated tests passing (77 Python, 9 gateway)</span></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <span class="eyebrow">02 · My contribution</span>
+      <h2>What I did, and what the team did.</h2>
+      <div class="callout mine">
+        <h4>My work</h4>
+        <ul class="list">
+          <li>Researched federated learning and synthetic data generation, and worked on how the team would tackle the problem: training one shared model across banks without moving any data, with synthetic fraud examples for banks that have too few.</li>
+          <li>Owned the Bank B node, a data-rich bank whose extra fraud examples come from CTGAN, a model that learns from the bank's own fraud rows.</li>
+          <li>Ran Bank B on my own laptop in the team's first cross-device test with the server on 11 October 2026: 10 training rounds over a phone hotspot. In each round my laptop received the shared model, trained it on Bank B's 41,801 rows and sent back only about 17 KB of weights. Bank B's rows never left the laptop.</li>
+          <li>Presented the project, including how CTGAN learned from Bank B's 82 fraud rows and why 814 of its 1,000 synthetic rows passed the validation gate.</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h4>Team work</h4>
+        <p>The system was engineered mainly by teammate Shubham Kumar Singh, with Palleti Pradeepa and Sathvik D running Banks C and D. The decisions below are recorded in the team's decision log. I describe them here as a case study of the project I was part of.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <span class="eyebrow">03 · Problem statement</span>
+      <h2>Fraud is rare, and the data that would help is locked away.</h2>
+      <p>Each bank sees only its own customers. Fraud is a tiny share of transactions, so a small bank may have only a handful of fraud cases to learn from. Pooling data across banks would help, but customer transaction data cannot leave the bank. The result is that the banks that most need a better model are the least able to build one.</p>
+      <p class="pull">Can banks get the benefit of shared data without sharing the data?</p>
+    </section>
+
+    <section class="cs-sec" id="users">
+      <span class="eyebrow">04 · Users and context</span>
+      <h2>Who the system serves.</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>User</th><th>Need</th><th>What they can do</th></tr></thead>
+        <tbody>
+          <tr><td>Admin (project lead)</td><td>Run and compare experiments, prepare models, oversee security</td><td>Start and cancel runs, start data generation, read the audit log</td></tr>
+          <tr><td>Bank operator (one per bank)</td><td>See results and use their own bank's synthetic data</td><td>View everything, export only their own bank's validated synthetic data</td></tr>
+          <tr><td>Viewer (project guide)</td><td>Review progress and results without changing anything</td><td>Read-only access</td></tr>
+        </tbody>
+      </table></div>
+      <p>The wider context is a bank fraud team: data-rich banks want a model that keeps up with rare fraud, and data-poor banks want one at all. Both are bound by data privacy rules.</p>
+    </section>
+
+    <section class="cs-sec" id="perspectives">
+      <span class="eyebrow">05 · Decisions and requirements</span>
+      <h2>Decisions, requirements and rules.</h2>
+
+      <!-- ================= PM PERSPECTIVE ================= -->
+      <div class="persp-panel" id="panel-pm">
+        <span class="tagline">Product decisions</span>
+        <h3>Product objective</h3>
+        <p>Give every bank, especially the smallest, a fraud model close to what pooled data would give, while no customer row ever leaves its bank. Be honest about what works: the team set out to test synthetic data, not to prove it.</p>
+
+        <h3>Key decisions</h3>
+        <div class="dlog">
+          <div class="dcard">
+            <div class="dh"><h4>Measure what matters, not accuracy</h4><span class="ref">Evaluation design</span></div>
+            <dl><dt>Decision</dt><dd>Judge models on fraud F1 and PR-AUC. Accuracy is shown but never used as a headline.</dd>
+            <dt>Why</dt><dd>Every model scored about 99.9% accuracy because almost all transactions are genuine. Accuracy would make a useless model look excellent.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Two ways to create synthetic fraud</h4><span class="ref">Decision log D-015, D-016</span></div>
+            <dl><dt>Decision</dt><dd>Data-rich banks use CTGAN on their own rows. Data-poor banks use an LLM that sees only summary statistics: mean, spread and three percentiles. No minimum or maximum, and never a real row.</dd>
+            <dt>Alternative</dt><dd>Show the LLM real rows as examples, which gives better quality data.</dd>
+            <dt>Trade-off</dt><dd>With only 18 to 28 fraud rows, a minimum or maximum would reveal one real customer's value. The team accepted lower data quality to keep the privacy promise, and measured the cost.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>A live demo that actually federates</h4><span class="ref">Decision log D-020</span></div>
+            <dl><dt>Proposal</dt><dd>The guide suggested four public GitHub repositories, one per bank, to show the model moving.</dd>
+            <dt>Decision</dt><dd>Run each bank on a separate laptop over a shared network, with only weights travelling between them.</dd>
+            <dt>Why</dt><dd>Repositories store files but cannot train anything, and public repositories would publish each bank's data, the opposite of the project's promise. The new set-up met the guide's goal, seeing the model move, without breaking privacy.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Report the result that did not work</h4><span class="ref">Results</span></div>
+            <dl><dt>Decision</dt><dd>Report that synthetic data gave no reliable improvement, as a finding.</dd>
+            <dt>Why</dt><dd>33 of 36 paired comparisons were unclear. Hiding it would have overstated the product; reporting it tells the next team where not to invest.</dd></dl>
+          </div>
+        </div>
+
+        <h3>Scope and trade-offs</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>In scope</th><th>Deferred or out of scope</th></tr></thead>
+          <tbody>
+            <tr><td>Federated training across four banks with weights only</td><td>Differential privacy and secure aggregation (future scope)</td></tr>
+            <tr><td>Synthetic data with a shared validation gate</td><td>More than one dataset or data split</td></tr>
+            <tr><td>Dashboard, role-based access and audit trail</td><td>Real bank deployment; results come from single-machine simulation</td></tr>
+            <tr><td>Optional extensions: fairness across banks (q-FedAvg) and controlled miss rate (conformal risk control)</td><td></td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Product outcome in plain language</h3>
+        <ul class="list">
+          <li>Learning together without sharing data worked: the federated model reached a fraud F1 of 0.796, against 0.775 for a model trained on all data pooled together, a set-up that would not be legal in practice.</li>
+          <li>The smallest bank benefited most. Bank D's F1 rose by 0.34 with federation, in every one of the five runs.</li>
+          <li>Synthetic data did not reliably help, so it should not be the priority for a next version.</li>
+        </ul>
+      </div>
+
+      <!-- ================= BA PERSPECTIVE ================= -->
+      <div class="persp-panel" id="panel-ba" style="margin-top:48px;">
+        <span class="tagline">Requirements and rules</span>
+        <h3>Business problem</h3>
+        <p>Banks need better fraud detection, but regulation and customer trust stop them from sharing transaction data. The business requirement is a way to collaborate on a model that keeps every bank's data inside the bank, with a clear record of who did what.</p>
+
+        <h3>Stakeholders and user roles</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Stakeholder</th><th>Interest</th><th>System role</th></tr></thead>
+          <tbody>
+            <tr><td>Participating banks (A to D)</td><td>Better fraud detection, data stays private</td><td>Bank operator</td></tr>
+            <tr><td>Project lead</td><td>Run experiments, keep results reproducible</td><td>Admin</td></tr>
+            <tr><td>Academic guide</td><td>Review progress and evidence</td><td>Viewer, read-only</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Requirements</h3>
+        <p class="muted" style="font-size:15px;">Retrospective analysis of the delivered system, based on the repository and decision log. Not an original requirements document.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>ID</th><th>Requirement</th><th>Type</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="num">FR-1</td><td>Banks train a shared model and exchange only model weights</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-2</td><td>Data-poor banks can generate synthetic fraud rows from summary statistics only</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-3</td><td>Every synthetic row passes one shared validation gate</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-4</td><td>Users log in and see only what their role allows</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-5</td><td>Bank operators export their own bank's validated synthetic data</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-6</td><td>Admins start and monitor experiment runs; users can test a single transaction against the federated model</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-1</td><td>No real or synthetic row crosses from one bank to another</td><td>Privacy</td><td><span class="pill-status st-done">Enforced and tested</span></td></tr>
+            <tr><td class="num">NFR-2</td><td>Security-relevant actions are recorded in an audit log</td><td>Compliance</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-3</td><td>The demo runs with no internet connection</td><td>Reliability</td><td><span class="pill-status st-done">Verified</span></td></tr>
+            <tr><td class="num">NFR-4</td><td>Differential privacy and secure aggregation</td><td>Privacy</td><td><span class="pill-status st-def">Future scope</span></td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>A requirement conflict, and how it was resolved</h3>
+        <div class="dcard">
+          <div class="dh"><h4>"Export the dataset" versus "no data crosses a bank boundary"</h4><span class="ref">Decision log D-045</span></div>
+          <dl><dt>Conflict</dt><dd>The feature list asked for dataset export. The privacy rule said no synthetic row may cross from one bank to another.</dd>
+          <dt>Options</dt><dd>Export aggregates only; let any logged-in user export (breaks the rule); export to the data owner only.</dd>
+          <dt>Resolution</dt><dd>Export returns only that bank's validated synthetic file, never real rows, and only to that bank's own operator. Every attempt is written to an audit log.</dd>
+          <dt>Proof</dt><dd>In the recorded check, Bank B exporting Bank B's data was allowed; Bank B requesting Bank C's data was refused; the viewer trying to read the audit log was refused.</dd></dl>
+        </div>
+
+        <h3>Business rules</h3>
+        <ul class="list">
+          <li>Only model weights and a few summary numbers travel between a bank and the server.</li>
+          <li>A bank operator's export scope comes from their login token, not from what they request.</li>
+          <li>The audit log records logins, refused actions, started runs and every export attempt, and only the admin can read it.</li>
+          <li>A failed login gives the same message whether or not the username exists.</li>
+        </ul>
+
+        <h3>Core workflow</h3>
+        <div class="flowline">
+          <div class="fs"><span class="n">1</span><b>Prepare</b><span>Each bank receives only its own data file</span></div>
+          <div class="fs"><span class="n">2</span><b>Generate</b><span>Synthetic fraud via CTGAN or LLM</span></div>
+          <div class="fs"><span class="n">3</span><b>Validate</b><span>Shared gate checks quality and privacy</span></div>
+          <div class="fs"><span class="n">4</span><b>Federate</b><span>30 rounds, weights only</span></div>
+          <div class="fs"><span class="n">5</span><b>Evaluate</b><span>Six set-ups, five runs each</span></div>
+        </div>
+
+        <h3>Constraints</h3>
+        <ul class="list">
+          <li>One public, anonymized dataset; small fraud counts make per-bank results noisy (Bank D's local test set has 4 frauds).</li>
+          <li>Runs on ordinary laptops with CPU only.</li>
+          <li>The external LLM has a daily quota, so data-poor banks use saved, pre-generated files in the demo.</li>
+        </ul>
+
+        <h3>Solution alignment</h3>
+        <p>The delivered system meets the core business need: collaboration without sharing data, with role-based access and an audit trail. The one feature that pulled against that need, export, was narrowed until it fit the privacy rule rather than the other way round.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="implementation">
+      <span class="eyebrow">06 · Implementation</span>
+      <h2>Three layers, one privacy rule.</h2>
+      <p>A React dashboard talks to a Node.js and Express gateway, which handles login, roles and the MongoDB record of runs and audit events. The gateway forwards allowed requests to a FastAPI service that runs data generation, validation and federated training with Flower across the four banks.</p>
+      <div class="gallery">
+        <figure><div class="shot"><img src="../assets/img/fraudnet-export.webp" alt="Export screen shown to the Bank B operator" loading="lazy" width="1400" height="907"></div><figcaption>Export, shown to the Bank B operator: only Bank B's validated synthetic file.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/fraudnet-audit.webp" alt="Admin audit log listing logins, runs, exports and refused actions" loading="lazy" width="1400" height="983"></div><figcaption>Audit log, admin only: logins, runs, exports and refused actions.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/fraudnet-results.webp" alt="Six-set-up comparison table and charts" loading="lazy" width="1400" height="1743"></div><figcaption>Results view comparing the six set-ups across five runs.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/fraudnet-predict.webp" alt="Single transaction fraud check screen" loading="lazy" width="1400" height="907"></div><figcaption>Testing a single transaction against the federated model.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="validation">
+      <span class="eyebrow">07 · Testing and validation</span>
+      <h2>Evidence, not claims.</h2>
+      <ul class="list">
+        <li>77 Python tests and 9 gateway tests pass with one command, plus a dashboard build check. They cover the data split, both generation engines, the validation gate, the metrics, the privacy rule and role-based export.</li>
+        <li>A 19-point pre-flight check confirms the demo is ready, and the full demo was run with internet access blocked.</li>
+        <li>The two-laptop test (Bank B on my laptop, server on a teammate's) ran 10 rounds, and the client and server logs agree for every round.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="outcomes">
+      <span class="eyebrow">08 · Outcomes and learnings</span>
+      <h2>What the results mean.</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>Set-up</th><th>Fraud F1</th><th>PR-AUC</th><th>In plain words</th></tr></thead>
+        <tbody>
+          <tr><td>Bank A alone / Bank D alone</td><td class="num">0.809 / 0.456</td><td class="num">0.705 / 0.662</td><td>A large bank does fine alone; a small one does not</td></tr>
+          <tr class="hl"><td>Federated, real data</td><td class="num">0.796 ± 0.006</td><td class="num">0.716 ± 0.006</td><td>Collaboration without sharing data</td></tr>
+          <tr><td>Federated, real + synthetic</td><td class="num">0.797 ± 0.017</td><td class="num">0.717 ± 0.007</td><td>Synthetic data adds no reliable gain</td></tr>
+          <tr><td>All data pooled (not allowed in practice)</td><td class="num">0.775 ± 0.028</td><td class="num">0.727 ± 0.004</td><td>The upper reference point</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted" style="font-size:15px;">Five runs, one global test set with 95 frauds. Source: the project's results annexure.</p>
+      <h3>What I learned</h3>
+      <ul class="list">
+        <li>A requirement list can contain rules that contradict each other. Writing the conflict down and choosing on purpose is better than letting it be settled in code.</li>
+        <li>The headline metric decides what the team optimizes. Choosing the wrong one, here accuracy, would have hidden the real problem.</li>
+        <li>A negative result is still a product decision: it tells you where not to spend the next sprint.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="future">
+      <span class="eyebrow">09 · Future opportunities</span>
+      <h2>Where it could go next.</h2>
+      <ul class="list">
+        <li>Add differential privacy and secure aggregation, so even model updates reveal less.</li>
+        <li>Test on more than one dataset and data split before drawing firm conclusions.</li>
+        <li>Move the four-laptop demo set-up towards a pilot with real institutional constraints.</li>
+      </ul>
+    </section>
+
+    <div class="next-cs">
+      <a href="ai-interviewer.html"><small>Next case study</small><strong>AI Voice Interviewer</strong></a>
+      <a href="vayu-aqi.html"><small>Also read</small><strong>Vayu AQI</strong></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<section class="cta" style="padding: 80px 0 70px;">
+  <div class="wrap">
+    <h2 style="font-size: clamp(32px,4.5vw,56px);">Have a product challenge <span class="it">in mind?</span></h2>
+    <div class="cta-actions" style="margin-top:26px;">
+      <a class="btn btn-dark" href="mailto:y16prachi04@gmail.com">Email me</a>
+      <a class="btn btn-light" href="../assets/resume/Prachi_Yadav_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer"><a href="../index.html">Home</a><a href="../index.html#projects">Projects</a><a href="../index.html#contact">Contact</a></nav>
+    <span>© <span id="year">2026</span> Prachi Yadav</span>
+  </div>
+  <div class="giant" aria-hidden="true">Prachi Yadav</div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

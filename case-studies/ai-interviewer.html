@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Voice Interviewer case study | Prachi Yadav</title>
+  <meta name="description" content="Product and business analysis case study: a spoken mock interview app that asks follow-up questions and gives feedback on each answer.">
+  <meta name="theme-color" content="#b7f34a">
+  <meta property="og:title" content="AI Voice Interviewer case study | Prachi Yadav">
+  <meta property="og:description" content="Spoken mock interviews with follow-up questions and rubric-based feedback: concept, requirements, rules and delivery.">
+  <meta property="og:image" content="../assets/img/ai-interviewer-home.webp">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html" aria-label="Prachi Yadav, home">Prachi Yadav</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#how-i-work">How I work</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-dark btn-small" href="../assets/resume/Prachi_Yadav_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="crumb" href="../index.html#projects"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>All case studies</a>
+    <h1>AI Voice <span class="it">Interviewer</span></h1>
+    <p class="lead">Most interview practice is reading questions alone. Real interviews are spoken, and the hard part is the follow-up. This app runs a spoken mock interview that listens, asks the follow-up a real panel would, and then gives feedback on each answer.</p>
+    <dl class="facts">
+      <div><dt>Category</dt><dd>Career tech, voice AI</dd></div>
+      <div><dt>Product name</dt><dd>IntervU</dd></div>
+      <div><dt>Team</dt><dd>Built with Shubham Kumar Singh</dd></div>
+      <div><dt>My role</dt><dd>Product concept and first working version</dd></div>
+    </dl>
+    <div class="cs-links">
+      <a class="btn btn-dark" href="https://github.com/PrachiYadav-16/AI-voice-interviewer" target="_blank" rel="noopener">View repository
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a class="btn btn-light" href="#perspectives">Jump to decisions</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap cs-cover rv">
+  <figure class="shot" style="margin:0"><img src="../assets/img/ai-interviewer-home.webp" alt="AI Voice Interviewer landing page with a sample behavioural question, answer and follow-up" width="1400" height="900"></figure>
+</div>
+
+<div class="wrap cs-body">
+  <nav class="toc" aria-label="On this page" data-spy>
+    <b>On this page</b>
+    <a href="#overview">Overview</a>
+    <a href="#role">My contribution</a>
+    <a href="#problem">Problem</a>
+    <a href="#users">Target users</a>
+    <a href="#perspectives">Decisions and requirements</a>
+    <a href="#implementation">Implementation</a>
+    <a href="#validation">Testing and validation</a>
+    <a href="#outcomes">Outcomes and learnings</a>
+    <a href="#future">Future opportunities</a>
+  </nav>
+
+  <article>
+    <section class="cs-sec" id="overview">
+      <span class="eyebrow">01 · Overview</span>
+      <h2>Practice the interview, not just the questions.</h2>
+      <p>The candidate picks what they are preparing for, from UPSC and SSB boards to campus placements and private-sector roles, and then talks with an AI interviewer. It asks one question at a time, waits while they think and follows up on what they actually said. Afterwards each answer is rated against a rubric for that interview type, with evidence quoted from their own words.</p>
+      <p>The product started as my first version in January 2026 and was later rebuilt and expanded into IntervU, keeping the same core idea: a spoken interview with role-based questions.</p>
+      <div class="stats">
+        <div class="stat"><b>2</b><span>tracks: government and public sector, private sector</span></div>
+        <div class="stat"><b>11</b><span>interview formats, from HR and STAR to panel and pressure rounds</span></div>
+        <div class="stat"><b>5</b><span>language options, including Hindi and Hindi–English mix</span></div>
+        <div class="stat"><b>65</b><span>automated unit and API tests in the current version</span></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <span class="eyebrow">02 · My contribution</span>
+      <h2>Concept to first working version.</h2>
+      <div class="callout mine">
+        <h4>My work</h4>
+        <ul class="list">
+          <li>Shaped the product concept: a voice-based mock interview with questions that depend on the job role.</li>
+          <li>Built the first working version: sign-up and login, a choice of 20 job roles, resume upload, avatar selection, and a live AI voice interview with a real-time transcript.</li>
+          <li>Designed the user flow from choosing a role to finishing the interview.</li>
+          <li>Own the repository; the later changes were merged into it through pull requests.</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h4>Team work</h4>
+        <p>Teammate Shubham Kumar Singh rebuilt and expanded the product as IntervU: the government and private-sector catalogue, rubric-based feedback reports, cloud accounts, and the automated tests.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <span class="eyebrow">03 · Problem statement</span>
+      <h2>The hard part of an interview is the follow-up.</h2>
+      <p>Candidates usually prepare by reading lists of common questions and rehearsing answers in their heads. That does not prepare them for speaking out loud, for a panel that probes a vague answer, or for interviews in Hindi. Mock interviews with real people are hard to arrange, and feedback is often general rather than tied to what was actually said.</p>
+      <p class="pull">Give anyone a realistic spoken interview, on demand, with feedback they can act on.</p>
+    </section>
+
+    <section class="cs-sec" id="users">
+      <span class="eyebrow">04 · Target users</span>
+      <h2>Who it is for.</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>User</th><th>Need</th><th>How the product responds</th></tr></thead>
+        <tbody>
+          <tr><td>Government job aspirants (UPSC, State PSCs, SSB, banking, PSUs)</td><td>Practice the personality test and board interview</td><td>A government track that also says whether that recruitment normally includes an interview</td></tr>
+          <tr><td>Private-sector job seekers</td><td>Practice for a specific role and company</td><td>Role, level, format and target company, with questions from their resume and the job posting</td></tr>
+          <tr><td>Students in campus placements</td><td>Get comfortable speaking under pressure</td><td>HR and general rounds, with a friendly to challenging interviewer style</td></tr>
+          <tr><td>Hindi speakers</td><td>Practice in the language of the real interview</td><td>Hindi and Hindi–English mix interviews</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="cs-sec" id="perspectives">
+      <span class="eyebrow">05 · Decisions and requirements</span>
+      <h2>Decisions, requirements and rules.</h2>
+
+      <div class="persp-panel" id="panel-pm">
+        <span class="tagline">Product decisions</span>
+        <h3>Product objective</h3>
+        <p>Make a mock interview feel like the real one, spoken and responsive, and make the feedback specific enough that the candidate knows what to fix before the next attempt.</p>
+
+        <h3>Key decisions</h3>
+        <div class="dlog">
+          <div class="dcard">
+            <div class="dh"><h4>Follow up, don't just ask</h4><span class="ref">Core value</span></div>
+            <dl><dt>Decision</dt><dd>One question at a time, with a follow-up based on what the candidate said rather than the next item on a list.</dd>
+            <dt>Why</dt><dd>Real panels probe vague answers. A fixed list cannot practice that, and it is what makes the product worth using over a question bank.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>A score you can trust</h4><span class="ref">Feedback design</span></div>
+            <dl><dt>Decision</dt><dd>The AI rates each answer 1 to 5 against a rubric, with evidence from the candidate's words. The app, not the AI, calculates the overall score, and shows none when fewer than three answers were rated.</dd>
+            <dt>Why</dt><dd>A single number from two answers would look precise without meaning much. Keeping the arithmetic in code keeps it consistent.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Say what is not measured</h4><span class="ref">Trust</span></div>
+            <dl><dt>Decision</dt><dd>Feedback covers the words only. Tone, pace, confidence and body language are not measured, and the app says so.</dd>
+            <dt>Why</dt><dd>Overclaiming would mislead candidates about what they need to work on.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Interviews in Indian languages</h4><span class="ref">Market fit</span></div>
+            <dl><dt>Decision</dt><dd>Support Hindi and Hindi–English mix, and a government track alongside the private sector.</dd>
+            <dt>Why</dt><dd>Many interviews in India, especially for public-sector roles, are not in English only.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Protect the running cost</h4><span class="ref">Business viability</span></div>
+            <dl><dt>Decision</dt><dd>AI features need a signed-in user and are rate-limited.</dd>
+            <dt>Why</dt><dd>Every voice call and report costs money on the AI providers. Without limits, anyone could run up the bill.</dd></dl>
+          </div>
+        </div>
+
+        <h3>How the scope grew</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Area</th><th>First version (mine, Jan 2026)</th><th>Current version (IntervU, Oct 2026)</th></tr></thead>
+          <tbody>
+            <tr><td>Roles</td><td>20 job roles</td><td>Government and private-sector tracks, custom interviews</td></tr>
+            <tr><td>Personalization</td><td>Resume upload, avatar choice</td><td>Resume and job description, target company, level, style, difficulty, length</td></tr>
+            <tr><td>Interview</td><td>Live voice interview, real-time transcript</td><td>Follow-ups, pause, mute, skip, repeat, silence nudges</td></tr>
+            <tr><td>Feedback</td><td>Spoken comments from the interviewer; no written report</td><td>Rubric-based report per answer and history</td></tr>
+            <tr><td>Accounts</td><td>Sign-up and login</td><td>Cloud accounts with email confirmation, or browser-only</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="persp-panel" id="panel-ba" style="margin-top:48px;">
+        <span class="tagline">Requirements and rules</span>
+        <h3>Business problem</h3>
+        <p>Candidates need affordable, realistic interview practice. The product must deliver a live conversation and useful feedback, while keeping personal data such as resumes private and keeping the cost of AI usage under control.</p>
+
+        <h3>Stakeholders</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Stakeholder</th><th>Interest</th></tr></thead>
+          <tbody>
+            <tr><td>Candidate</td><td>Realistic practice, clear feedback, privacy of resume and answers</td></tr>
+            <tr><td>Product owner</td><td>Controlled AI cost, no misuse of paid services, reliable feedback</td></tr>
+            <tr><td>AI service providers (voice and language models)</td><td>Usage is billed to the owner's accounts</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Requirements</h3>
+        <p class="muted" style="font-size:15px;">Retrospective analysis of the current version, based on the repository. Not an original requirements document.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>ID</th><th>Requirement</th><th>Type</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="num">FR-1</td><td>Users create an account and sign in</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-2</td><td>Set up an interview: track, role, level, format, style, difficulty, length and language</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-3</td><td>Upload a resume and job description (PDF, .docx or .txt) to personalise questions</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-4</td><td>Run a live voice interview with pause, mute, skip, repeat and end</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-5</td><td>Produce a feedback report rating each answer with evidence</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-6</td><td>Keep a history of past interviews and reports</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-1</td><td>No audio recordings kept; uploaded files read in memory and not stored</td><td>Privacy</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-2</td><td>Each user can read only their own interviews</td><td>Security</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-3</td><td>AI features require sign-in and are rate-limited</td><td>Cost control</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-4</td><td>Works without a cloud database, storing data in the browser</td><td>Availability</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Business rules</h3>
+        <ul class="list">
+          <li>The overall score is the average answer rating mapped to 0–100, and is shown only when at least three answers were rated.</li>
+          <li>Uploaded files are limited to 5 MB.</li>
+          <li>The call's time limit is set from the interview length the candidate chose.</li>
+          <li>The interviewer does not state recent facts, since no live news source is connected, and reports note that recent claims cannot be verified.</li>
+          <li>After 25 seconds of silence the interviewer nudges once.</li>
+        </ul>
+
+        <h3>Core workflow</h3>
+        <div class="flowline">
+          <div class="fs"><span class="n">1</span><b>Sign up</b><span>Create an account</span></div>
+          <div class="fs"><span class="n">2</span><b>Set up</b><span>Choose track, role, format and language; add resume or job posting</span></div>
+          <div class="fs"><span class="n">3</span><b>Interview</b><span>Spoken questions and follow-ups</span></div>
+          <div class="fs"><span class="n">4</span><b>Feedback</b><span>Rating and evidence per answer</span></div>
+          <div class="fs"><span class="n">5</span><b>Improve</b><span>Review history and try again</span></div>
+        </div>
+
+        <h3>Constraints and known limitations</h3>
+        <ul class="list">
+          <li>Speech-to-text errors can affect feedback, so the evaluator is told to ignore obvious transcription mistakes.</li>
+          <li>Older .doc files and scanned PDFs cannot be read; candidates can paste the text instead.</li>
+          <li>The microphone needs a secure (HTTPS) site in production.</li>
+          <li>Without the cloud database, accounts stay in one browser and do not sync across devices.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="implementation">
+      <span class="eyebrow">06 · Implementation</span>
+      <h2>A guided set-up, then a conversation.</h2>
+      <p>A Next.js and TypeScript web app. The live call runs in the browser through the Vapi voice platform, and a language model rates the transcript after the call. Accounts and saved interviews use Supabase with row-level security, or the browser alone if no database is configured.</p>
+      <div class="gallery">
+        <figure><div class="shot"><img src="../assets/img/ai-interviewer-tracks.webp" alt="Interview set-up: government, private sector or custom" loading="lazy" width="1400" height="470"></div><figcaption>Step one: what are you preparing for?</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/ai-interviewer-setup.webp" alt="Set-up options for a Product Manager interview: level, format, style, difficulty, length and language" loading="lazy" width="1400" height="1150"></div><figcaption>Set-up for a Product Manager interview, with sensible defaults.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/ai-interviewer-report.webp" alt="Feedback report with an overall score, ratings per criterion and answer-by-answer feedback" loading="lazy" width="1400" height="1060"></div><figcaption>Feedback report: ratings per criterion, with evidence from each answer.</figcaption></figure>
+      </div>
+      <p class="muted" style="font-size:14px;">Screens captured from the current version running locally. The report uses sample answers, scored by the app's own scoring code. The live call needs paid voice keys, so it is not shown.</p>
+    </section>
+
+    <section class="cs-sec" id="validation">
+      <span class="eyebrow">07 · Testing and validation</span>
+      <h2>Tested where it could break.</h2>
+      <ul class="list">
+        <li>65 unit and API tests covering the interview state machine, scoring, the question catalogue and prompts, data storage, cloud sync and the server routes.</li>
+        <li>A browser smoke test with a fake microphone checks the flow end to end. It does not test a real conversation.</li>
+        <li>Type checking and linting with zero warnings allowed.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="outcomes">
+      <span class="eyebrow">08 · Outcomes and learnings</span>
+      <h2>What came out of it.</h2>
+      <p>The product works end to end when the voice and AI keys are configured. It has not been launched publicly, so there are no user numbers to report.</p>
+      <h3>What I learned</h3>
+      <ul class="list">
+        <li>A first version is a tool for finding the real value. Building a voice interview showed that the follow-up, not the question list, is what makes practice useful.</li>
+        <li>Feedback rules, like when to show a score, are product decisions that decide whether users trust the result.</li>
+        <li>AI products have a running cost per use, so access and limits belong in the requirements from the start.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="future">
+      <span class="eyebrow">09 · Future opportunities</span>
+      <h2>Where it could go next.</h2>
+      <ul class="list">
+        <li>Feedback on delivery, such as pace and filler words, which the product does not measure today.</li>
+        <li>A live news source for current-affairs questions in government interviews.</li>
+        <li>Launch to a small group of candidates and measure repeat practice and score change over attempts.</li>
+      </ul>
+    </section>
+
+    <div class="next-cs">
+      <a href="vayu-aqi.html"><small>Next case study</small><strong>Vayu AQI</strong></a>
+      <a href="mentorconnect.html"><small>Also read</small><strong>MentorConnect</strong></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<section class="cta" style="padding: 80px 0 70px;">
+  <div class="wrap">
+    <h2 style="font-size: clamp(32px,4.5vw,56px);">Have a product challenge <span class="it">in mind?</span></h2>
+    <div class="cta-actions" style="margin-top:26px;">
+      <a class="btn btn-dark" href="mailto:y16prachi04@gmail.com">Email me</a>
+      <a class="btn btn-light" href="../assets/resume/Prachi_Yadav_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer"><a href="../index.html">Home</a><a href="../index.html#projects">Projects</a><a href="../index.html#contact">Contact</a></nav>
+    <span>© <span id="year">2026</span> Prachi Yadav</span>
+  </div>
+  <div class="giant" aria-hidden="true">Prachi Yadav</div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

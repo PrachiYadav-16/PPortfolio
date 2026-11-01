@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vayu AQI case study | Prachi Yadav</title>
+  <meta name="description" content="Product and business analysis case study: air quality forecasting, pollution-aware route planning and health-based alerts for Indian cities.">
+  <meta name="theme-color" content="#b7f34a">
+  <meta property="og:title" content="Vayu AQI case study | Prachi Yadav">
+  <meta property="og:description" content="From a city-wide AQI number to a personal decision: which route, when to leave, and when to worry.">
+  <meta property="og:image" content="../assets/img/vayu-plan.webp">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html" aria-label="Prachi Yadav, home">Prachi Yadav</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#how-i-work">How I work</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-dark btn-small" href="../assets/resume/Prachi_Yadav_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="crumb" href="../index.html#projects"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>All case studies</a>
+    <h1>Vayu <span class="it">AQI</span></h1>
+    <p class="lead">A city's AQI number tells you the air is bad. It does not tell you which way to go to work, when to leave, or whether it is bad for you in particular. Vayu answers those three questions.</p>
+    <dl class="facts">
+      <div><dt>Category</dt><dd>HealthTech, consumer web app</dd></div>
+      <div><dt>Context</dt><dd>Internship project, 2026</dd></div>
+      <div><dt>Team</dt><dd>Individual project</dd></div>
+      <div><dt>My role</dt><dd>Defined, built and deployed end to end</dd></div>
+    </dl>
+    <div class="cs-links">
+      <a class="btn btn-dark" href="https://vayu-aqi.onrender.com" target="_blank" rel="noopener">Open live app
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a class="btn btn-light" href="https://github.com/PrachiYadav-16/vayu-aqi" target="_blank" rel="noopener">View repository</a>
+    </div>
+    <p class="muted" style="font-size:14px; margin-top:12px;">The live app is on a free hosting plan, so the first visit after a quiet spell can take up to a minute to load.</p>
+  </div>
+</section>
+
+<div class="wrap cs-cover rv">
+  <figure class="shot" style="margin:0"><img src="../assets/img/vayu-plan.webp" alt="Vayu trip planner comparing three routes from Koramangala to Electronic City" width="1400" height="1652"></figure>
+</div>
+
+<div class="wrap cs-body">
+  <nav class="toc" aria-label="On this page" data-spy>
+    <b>On this page</b>
+    <a href="#overview">Overview</a>
+    <a href="#role">My contribution</a>
+    <a href="#problem">Problem</a>
+    <a href="#users">Target users</a>
+    <a href="#perspectives">Decisions and requirements</a>
+    <a href="#implementation">Implementation</a>
+    <a href="#validation">Testing and validation</a>
+    <a href="#outcomes">Outcomes and learnings</a>
+    <a href="#future">Future opportunities</a>
+  </nav>
+
+  <article>
+    <section class="cs-sec" id="overview">
+      <span class="eyebrow">01 · Overview</span>
+      <h2>From a city number to a personal decision.</h2>
+      <p>Vayu forecasts the Air Quality Index on India's official CPCB scale for the next 24 hours at any point in a covered city. It estimates how much polluted air you would breathe on each route and at each departure time, and alerts you when the air where you are, or on a trip you saved, crosses the level that is safe for your health.</p>
+      <div class="stats">
+        <div class="stat"><b>24 h</b><span>forecast with a likely range, not a single number</span></div>
+        <div class="stat"><b>3</b><span>languages: English, Hindi and Kannada</span></div>
+        <div class="stat"><b>50</b><span>automated tests, plus a load test</span></div>
+        <div class="stat"><b>Live</b><span>deployed web app you can try</span></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <span class="eyebrow">02 · My contribution</span>
+      <h2>An individual project, end to end.</h2>
+      <div class="callout mine">
+        <h4>My work</h4>
+        <ul class="list">
+          <li>Turned the brief (route-specific AQI forecasts and proactive alerts) into a product: who it is for, which decisions it supports and what it should not do.</li>
+          <li>Made the product decisions below and built the backend, forecasting model, web app and deployment.</li>
+          <li>Wrote the documentation: architecture, API, model evaluation, testing and deployment guides.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <span class="eyebrow">03 · Problem statement</span>
+      <h2>Air quality data exists. Useful advice does not.</h2>
+      <p>People in Indian cities can look up an AQI number, but it describes the whole city at one moment. The real questions are personal: is my commute worse by one road than another, would leaving an hour later help, and is today's level a problem for someone with asthma, a child or an older parent? Without answers, the number is easy to ignore.</p>
+      <p class="pull">Turn air quality data into a decision someone can act on today.</p>
+    </section>
+
+    <section class="cs-sec" id="users">
+      <span class="eyebrow">04 · Target users</span>
+      <h2>Who Vayu is for.</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>User</th><th>Need</th><th>How Vayu responds</th></tr></thead>
+        <tbody>
+          <tr><td>Daily commuters</td><td>Choose the cleaner route and time</td><td>Compares up to 3 routes and departure times</td></tr>
+          <tr><td>People with asthma, COPD or heart disease</td><td>Know early when air is unsafe for them</td><td>Alerts at a stricter threshold (AQI 100)</td></tr>
+          <tr><td>Parents, pregnant women, people over 65, outdoor workers</td><td>Protect vulnerable people</td><td>Alerts at AQI 150</td></tr>
+          <tr><td>Hindi and Kannada speakers</td><td>Understand advice in their own language</td><td>Full interface, alerts and briefs in three languages</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="cs-sec" id="perspectives">
+      <span class="eyebrow">05 · Decisions and requirements</span>
+      <h2>Decisions, requirements and rules.</h2>
+
+      <div class="persp-panel" id="panel-pm">
+        <span class="tagline">Product decisions</span>
+        <h3>Product objective</h3>
+        <p>Help people reduce the pollution they breathe by giving them a small number of clear, personal and trustworthy recommendations, not a dashboard of numbers.</p>
+
+        <h3>Key decisions</h3>
+        <div class="dlog">
+          <div class="dcard">
+            <div class="dh"><h4>Score exposure, not AQI</h4><span class="ref">Core value</span></div>
+            <dl><dt>Decision</dt><dd>Score a trip by the PM2.5 you would actually inhale: forecast pollution where you are each minute, times your breathing rate for how you travel, times how much outside air gets in.</dd>
+            <dt>Why</dt><dd>The same route can be fine by car with the windows up and a bad idea by bicycle. A city AQI cannot show that.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Only speak up when it matters</h4><span class="ref">Prioritization</span></div>
+            <dl><dt>Decision</dt><dd>Suggest a different route or departure time only when it cuts the dose by 12% or more.</dd>
+            <dt>Trade-off</dt><dd>Some small improvements go unmentioned, in exchange for advice that is rare enough to be read and acted on.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Use the scale people already know</h4><span class="ref">Adoption</span></div>
+            <dl><dt>Decision</dt><dd>Use India's CPCB AQI scale and its six color bands rather than the US scale many data sources provide.</dd>
+            <dt>Why</dt><dd>That is the scale people see on the news and on official displays, so Vayu's numbers match what they already trust.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Make pollution feel real</h4><span class="ref">Communication</span></div>
+            <dl><dt>Decision</dt><dd>Convert inhaled PM2.5 into a cigarette equivalent and track it against a daily budget based on the WHO guideline.</dd>
+            <dt>Why</dt><dd>"Today equals 3 cigarettes" lands in a way "AQI 160" does not.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Be honest about uncertainty</h4><span class="ref">Trust</span></div>
+            <dl><dt>Decision</dt><dd>Show a likely range for every forecast, and say plainly when a point is more than 45 km from any monitoring station.</dd>
+            <dt>Why</dt><dd>A confident wrong number would cost more trust than an honest range.</dd></dl>
+          </div>
+        </div>
+
+        <h3>Scope: delivered and deferred</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Feature</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>24-hour forecasts with ranges, map, current advice</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td>Trip planner: routes, departure-time scan, travel mode</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td>Health profiles, alerts, quiet hours, morning brief</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td>Plain-language explanations of what drives the forecast</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td>Home advice: when to open windows, when to run a purifier</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td>Weather forecasts as a model input</td><td><span class="pill-status st-def">Future scope</span></td></tr>
+            <tr><td>Satellite data for areas without stations</td><td><span class="pill-status st-def">Future scope</span></td></tr>
+            <tr><td>More languages (Tamil, Telugu, Marathi) and voice alerts</td><td><span class="pill-status st-def">Future scope</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="persp-panel" id="panel-ba" style="margin-top:48px;">
+        <span class="tagline">Requirements and rules</span>
+        <h3>Business problem</h3>
+        <p>The brief asked for route-specific AQI forecasts and proactive health alerts. Delivering that meant defining what data is collected and with what consent, what the forecast must output, which rules trigger an alert, and how the system behaves when data is missing.</p>
+
+        <h3>Requirements</h3>
+        <p class="muted" style="font-size:15px;">Retrospective analysis of the delivered app, based on the repository. Not an original requirements document.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>ID</th><th>Requirement</th><th>Type</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="num">FR-1</td><td>Collect location only with explicit consent, and air quality and weather data for covered cities</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-2</td><td>Forecast AQI for each of the next 24 hours with an 80% range</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-3</td><td>Compare route alternatives and departure times by estimated dose</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-4</td><td>Send alerts when air at the user's location or on a saved trip crosses their threshold</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">FR-5</td><td>Let users set notification preferences and quiet hours</td><td>Functional</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-1</td><td>Location thinned to one point per 10 minutes, deleted after 30 days, wiped immediately if consent is withdrawn</td><td>Privacy</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-2</td><td>Every message available in English, Hindi and Kannada; a missing translation fails the build</td><td>Accessibility</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-3</td><td>Works without paid API keys, falling back to free or simulated data</td><td>Cost</td><td><span class="pill-status st-done">Delivered</span></td></tr>
+            <tr><td class="num">NFR-4</td><td>Responsive under load: 30 concurrent users with no failures</td><td>Performance</td><td><span class="pill-status st-done">Load tested</span></td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Business rules: who gets alerted, and when</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Health profile</th><th>Alert above</th></tr></thead>
+          <tbody>
+            <tr><td>Asthma, COPD or heart disease</td><td class="num">AQI 100</td></tr>
+            <tr><td>Pregnancy, children, over 65, outdoor workers</td><td class="num">AQI 150</td></tr>
+            <tr><td>Everyone else</td><td class="num">AQI 200</td></tr>
+          </tbody>
+        </table></div>
+        <ul class="list">
+          <li>If several profiles apply, the strictest threshold wins, and users can set their own.</li>
+          <li>A route or time change is suggested only when it reduces the dose by at least 12%.</li>
+          <li>Outside the covered cities the app says it has no nearby station rather than guessing.</li>
+        </ul>
+
+        <h3>Core workflow</h3>
+        <div class="flowline">
+          <div class="fs"><span class="n">1</span><b>Consent</b><span>User turns on location and sets a health profile</span></div>
+          <div class="fs"><span class="n">2</span><b>Collect</b><span>Hourly air quality and weather data per station</span></div>
+          <div class="fs"><span class="n">3</span><b>Forecast</b><span>Next 24 hours with a likely range</span></div>
+          <div class="fs"><span class="n">4</span><b>Assess</b><span>Score routes and departure times by dose</span></div>
+          <div class="fs"><span class="n">5</span><b>Alert</b><span>Notify when the user's threshold is crossed</span></div>
+        </div>
+
+        <h3>Constraints and known limitations</h3>
+        <ul class="list">
+          <li>Monitoring stations are uneven across India, so coverage is limited to seeded cities.</li>
+          <li>The inhaled dose is an estimate from published averages, good for comparing options but not a medical measurement.</li>
+          <li>Hourly AQI reacts faster than the official bulletin, which uses 24-hour and 8-hour averages.</li>
+          <li>Background push notifications need a Firebase project; without it, alerts show inside the app.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="implementation">
+      <span class="eyebrow">06 · Implementation</span>
+      <h2>Built to run for free, in three languages.</h2>
+      <p>A React and TypeScript web app that works as an installable app, backed by a Python FastAPI service. The forecast comes from a small neural network trained to predict a range rather than one value. The live app uses free Copernicus air quality data from Open-Meteo by default, and the model retrains weekly but only replaces the current one if the new version is at least as accurate.</p>
+      <div class="gallery">
+        <figure><div class="shot"><img src="../assets/img/vayu-now.webp" alt="Vayu home screen with current AQI, advice and daily air budget" loading="lazy" width="1400" height="2009"></div><figcaption>Air now: personal advice and today's cigarette-equivalent budget.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/vayu-alerts.webp" alt="Alerts list and morning brief" loading="lazy" width="1400" height="933"></div><figcaption>Alerts and the morning air brief.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/vayu-plan-kannada.webp" alt="Trip planner in Kannada" loading="lazy" width="1400" height="1118"></div><figcaption>The trip planner in Kannada.</figcaption></figure>
+        <figure><div class="shot" style="background: var(--lime-soft); display:grid; place-items:center;"><img src="../assets/img/vayu-mobile-hindi.webp" alt="Vayu on a phone in Hindi" loading="lazy" width="390" height="844" style="width:auto; height:92%; object-fit:contain; border-radius:12px;"></div><figcaption>On a phone, in Hindi.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="validation">
+      <span class="eyebrow">07 · Testing and validation</span>
+      <h2>Checked against the requirements.</h2>
+      <ul class="list">
+        <li>50 automated tests covering AQI calculations, alert thresholds and cooldowns, consent and location deletion, trip assessment, car versus cycle dose and all three languages. CI runs them on every change.</li>
+        <li>An end-to-end check in a headless browser covered every screen in all three languages, on a desktop and a phone-sized screen.</li>
+        <li>A load test with 30 concurrent users had no failures. Trip assessment, the heaviest request, stayed under 400 ms at the 95th percentile.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="outcomes">
+      <span class="eyebrow">08 · Outcomes and learnings</span>
+      <h2>What came out of it.</h2>
+      <p>Vayu is live and can be tried with a free account. It has not been measured with real users yet, so there are no usage numbers to report.</p>
+      <div class="callout">
+        <h4>A note on the model results</h4>
+        <p>On held-out data, the forecast beat a simple "stays the same" baseline at every horizon tested, for example an average error of 11.3 AQI points against 22.9 six hours ahead. These figures come from a simulated data feed, not real stations, and the repository says errors will be higher on real data. They show the model works as designed, not how accurate it is in the field.</p>
+      </div>
+      <h3>What I learned</h3>
+      <ul class="list">
+        <li>The most valuable decisions were about what to say and when, not about the model. A good forecast is useless if the advice is ignored.</li>
+        <li>Thresholds are product rules. Writing them down by health profile made them testable.</li>
+        <li>Being clear about limits, like coverage and simulated results, builds more trust than overstating accuracy.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="future">
+      <span class="eyebrow">09 · Future opportunities</span>
+      <h2>Where it could go next.</h2>
+      <ul class="list">
+        <li>Use weather forecasts as an input, the most direct way to improve forecasts 12 to 24 hours ahead.</li>
+        <li>Satellite aerosol data for areas with no monitoring stations.</li>
+        <li>Smart purifier integration, more Indian languages and voice alerts for people who do not read.</li>
+        <li>Measure with real users: alert open rates and how often suggested route changes are taken.</li>
+      </ul>
+    </section>
+
+    <div class="next-cs">
+      <a href="mentorconnect.html"><small>Next case study</small><strong>MentorConnect</strong></a>
+      <a href="fraudnet-synth.html"><small>Also read</small><strong>FraudNet-Synth</strong></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<section class="cta" style="padding: 80px 0 70px;">
+  <div class="wrap">
+    <h2 style="font-size: clamp(32px,4.5vw,56px);">Have a product challenge <span class="it">in mind?</span></h2>
+    <div class="cta-actions" style="margin-top:26px;">
+      <a class="btn btn-dark" href="mailto:y16prachi04@gmail.com">Email me</a>
+      <a class="btn btn-light" href="../assets/resume/Prachi_Yadav_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer"><a href="../index.html">Home</a><a href="../index.html#projects">Projects</a><a href="../index.html#contact">Contact</a></nav>
+    <span>© <span id="year">2026</span> Prachi Yadav</span>
+  </div>
+  <div class="giant" aria-hidden="true">Prachi Yadav</div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

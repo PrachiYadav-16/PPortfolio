@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MentorConnect case study | Prachi Yadav</title>
+  <meta name="description" content="Product and business analysis case study: a mentorship platform covering discovery, requests, booking, sessions and reviews.">
+  <meta name="theme-color" content="#b7f34a">
+  <meta property="og:title" content="MentorConnect case study | Prachi Yadav">
+  <meta property="og:description" content="One journey from finding a mentor to reviewing a session: concept, requirements, rules and delivery.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../index.html" aria-label="Prachi Yadav, home">Prachi Yadav</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#how-i-work">How I work</a></li>
+      <li><a href="../index.html#projects" class="active">Projects</a></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-dark btn-small" href="../assets/resume/Prachi_Yadav_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="cs-hero">
+  <div class="wrap">
+    <a class="crumb" href="../index.html#projects"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>All case studies</a>
+    <h1>Mentor<span class="it">Connect</span></h1>
+    <p class="lead">Finding a mentor, agreeing a time, meeting and following up usually happens across messages, calls and calendars. MentorConnect puts that whole journey in one place.</p>
+    <dl class="facts">
+      <div><dt>Category</dt><dd>EdTech, two-sided platform</dd></div>
+      <div><dt>Users</dt><dd>Mentees, mentors and admins</dd></div>
+      <div><dt>Team</dt><dd>Built with Shubham Kumar Singh</dd></div>
+      <div><dt>My role</dt><dd>Product concept, requirements, UX, first prototype</dd></div>
+    </dl>
+    <div class="cs-links">
+      <a class="btn btn-dark" href="https://mentorconnect-alpha.vercel.app" target="_blank" rel="noopener">Open live demo
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a class="btn btn-light" href="https://github.com/PrachiYadav-16/mentorconnect" target="_blank" rel="noopener">First version (PHP)</a>
+      <a class="btn btn-light" href="https://github.com/shubhamrajput27/mentorconnect" target="_blank" rel="noopener">Live version (Next.js)</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap cs-cover rv">
+  <figure class="shot" style="margin:0"><img src="../assets/img/mentorconnect-mentors.webp" alt="MentorConnect mentor directory with search, skill and price filters" width="1400" height="900"></figure>
+</div>
+
+<div class="wrap cs-body">
+  <nav class="toc" aria-label="On this page" data-spy>
+    <b>On this page</b>
+    <a href="#overview">Overview</a>
+    <a href="#role">My contribution</a>
+    <a href="#problem">Problem</a>
+    <a href="#users">Target users</a>
+    <a href="#perspectives">Decisions and requirements</a>
+    <a href="#implementation">Implementation</a>
+    <a href="#validation">Testing and validation</a>
+    <a href="#outcomes">Outcomes and learnings</a>
+    <a href="#future">Future opportunities</a>
+  </nav>
+
+  <article>
+    <section class="cs-sec" id="overview">
+      <span class="eyebrow">01 · Overview</span>
+      <h2>One journey: discover, request, book, meet, review.</h2>
+      <p>MentorConnect is a mentorship platform for students and early-career learners. Mentees search for a mentor, send a request, book a one-to-one session from the mentor's real availability, join a video call, chat between sessions and leave a review. Mentors manage requests and availability. Admins keep the platform safe.</p>
+      <p>The product went through two versions. The first was built in PHP and MySQL. It was then rebuilt on Next.js and PostgreSQL, keeping the same core journey, and that version is the one running as the live demo.</p>
+      <div class="stats">
+        <div class="stat"><b>3</b><span>roles: mentee, mentor, admin</span></div>
+        <div class="stat"><b>5</b><span>steps in the core journey</span></div>
+        <div class="stat"><b>21</b><span>automated tests in the live version (12 unit, 9 end-to-end)</span></div>
+        <div class="stat"><b>Live</b><span>public demo on Vercel</span></div>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="role">
+      <span class="eyebrow">02 · My contribution</span>
+      <h2>Concept to first working version.</h2>
+      <div class="callout mine">
+        <h4>My work</h4>
+        <ul class="list">
+          <li>Shaped the product concept: who the platform serves and the journey from finding a mentor to reviewing a session.</li>
+          <li>Defined the requirements and core user flows for mentees, mentors and admins.</li>
+          <li>Designed the user interface and experience.</li>
+          <li>Built the first working prototype in PHP and MySQL, which set the feature scope for the version that followed.</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <h4>Team work</h4>
+        <p>Teammate Shubham Kumar Singh rebuilt the product on Next.js and PostgreSQL, added the automated tests and deployed the live demo.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="problem">
+      <span class="eyebrow">03 · Problem statement</span>
+      <h2>Mentorship is valuable but hard to organize.</h2>
+      <p>A learner who wants guidance has to find a relevant mentor, reach out without knowing if they are open to it, agree a time across time zones and keep the conversation going afterwards. Each step happens in a different tool, and there is no shared way to judge whether a mentor is a good fit.</p>
+      <p class="pull">Make the path from "I need guidance" to a booked, reviewed session one continuous journey.</p>
+    </section>
+
+    <section class="cs-sec" id="users">
+      <span class="eyebrow">04 · Target users</span>
+      <h2>A two-sided platform, plus the people who run it.</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th>User</th><th>Goal</th><th>Pain point the product addresses</th></tr></thead>
+        <tbody>
+          <tr><td>Mentee</td><td>Find the right mentor and get regular time with them</td><td>No easy way to search by skill or company, or to see when a mentor is free</td></tr>
+          <tr><td>Mentor</td><td>Help people without losing control of their time</td><td>Requests arrive anywhere; scheduling across time zones is manual</td></tr>
+          <tr><td>Admin</td><td>Keep the platform trustworthy</td><td>Needs to see activity and remove bad actors quickly</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="cs-sec" id="perspectives">
+      <span class="eyebrow">05 · Decisions and requirements</span>
+      <h2>Decisions, requirements and rules.</h2>
+
+      <div class="persp-panel" id="panel-pm">
+        <span class="tagline">Product decisions</span>
+        <h3>Product objective</h3>
+        <p>Get a mentee from search to a completed, reviewed session with as little back and forth as possible, while giving mentors control over their time.</p>
+
+        <h3>Key decisions</h3>
+        <div class="dlog">
+          <div class="dcard">
+            <div class="dh"><h4>Request before booking</h4><span class="ref">Journey design</span></div>
+            <dl><dt>Decision</dt><dd>A mentee sends a request with a message; only after the mentor accepts can sessions be booked.</dd>
+            <dt>Why</dt><dd>Mentors keep control over who they work with, and bookings only happen inside an agreed relationship.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Book from real availability</h4><span class="ref">Scheduling</span></div>
+            <dl><dt>Decision</dt><dd>Mentors set weekly availability in their own time zone; mentees see open slots in theirs, and booked slots are hidden.</dd>
+            <dt>Why</dt><dd>Removes the back-and-forth over times, across time zones.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Reviews you can trust</h4><span class="ref">Trust and quality</span></div>
+            <dl><dt>Decision</dt><dd>Only a mentee who attended a completed session can review it.</dd>
+            <dt>Why</dt><dd>Ratings drive mentor choice, so they must come from real sessions, not from anyone with an account.</dd></dl>
+          </div>
+          <div class="dcard">
+            <div class="dh"><h4>Ship the journey first, upgrade later</h4><span class="ref">Scope</span></div>
+            <dl><dt>Decision</dt><dd>Chat checks for new messages every few seconds rather than using a real-time service; payments and email reminders are listed as later upgrades.</dd>
+            <dt>Why</dt><dd>The core journey works end to end without extra paid services, and the upgrades can be added when there are enough users to justify them.</dd></dl>
+          </div>
+        </div>
+
+        <h3>Scope: delivered and deferred</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Feature</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Accounts, roles, email verification and password reset</td><td><span class="pill-status st-done">Live</span></td></tr>
+            <tr><td>Onboarding and profiles (skills, goals, time zone; mentor role, company, rate, languages)</td><td><span class="pill-status st-done">Live</span></td></tr>
+            <tr><td>Mentor directory with search, filters and sorting</td><td><span class="pill-status st-done">Live</span></td></tr>
+            <tr><td>Requests, scheduling, sessions with an automatic video link</td><td><span class="pill-status st-done">Live</span></td></tr>
+            <tr><td>Messaging, reviews, notifications, dashboards, admin panel</td><td><span class="pill-status st-done">Live</span></td></tr>
+            <tr><td>Real-time chat instead of polling</td><td><span class="pill-status st-def">Later upgrade</span></td></tr>
+            <tr><td>Email notifications for bookings and messages</td><td><span class="pill-status st-def">Later upgrade</span></td></tr>
+            <tr><td>Payments for paid sessions</td><td><span class="pill-status st-def">Later upgrade</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <div class="persp-panel" id="panel-ba" style="margin-top:48px;">
+        <span class="tagline">Requirements and rules</span>
+        <h3>Business problem</h3>
+        <p>A mentorship program only works if mentees can find mentors, sessions actually happen and quality is visible. The platform needs clear roles, a controlled workflow from request to session, and rules that keep bookings and reviews reliable.</p>
+
+        <h3>Stakeholders and roles</h3>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>Role</th><th>Can do</th><th>Key rule</th></tr></thead>
+          <tbody>
+            <tr><td>Mentee</td><td>Search mentors, send requests, book, cancel, chat, review completed sessions</td><td>Can only review sessions they attended</td></tr>
+            <tr><td>Mentor</td><td>Accept or decline requests, set availability, confirm or decline sessions, chat</td><td>Each open slot can be booked only once</td></tr>
+            <tr><td>Admin</td><td>See platform stats, search users, suspend or reactivate accounts</td><td>Suspending a user signs them out everywhere</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Functional workflow</h3>
+        <div class="flowline">
+          <div class="fs"><span class="n">1</span><b>Discover</b><span>Search by name, skill or company; filter by skill and price; sort by rating, experience or price</span></div>
+          <div class="fs"><span class="n">2</span><b>Request</b><span>Mentee sends a message; mentor accepts or declines</span></div>
+          <div class="fs"><span class="n">3</span><b>Book</b><span>Pick an open slot shown in the mentee's time zone</span></div>
+          <div class="fs"><span class="n">4</span><b>Meet</b><span>Mentor confirms, both join the video call, session marked complete</span></div>
+          <div class="fs"><span class="n">5</span><b>Review</b><span>Mentee rates the session; rating appears on the profile</span></div>
+        </div>
+
+        <h3>Business rules</h3>
+        <p class="muted" style="font-size:15px;">Retrospective analysis of the live version, based on the repository. Not an original requirements document.</p>
+        <div class="tbl-wrap"><table class="tbl">
+          <thead><tr><th>ID</th><th>Rule</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td class="num">BR-1</td><td>Sessions can only be booked inside an accepted mentorship</td><td>Mentors control who takes their time</td></tr>
+            <tr><td class="num">BR-2</td><td>A slot can be booked once, even if two mentees try at the same instant</td><td>No double bookings</td></tr>
+            <tr><td class="num">BR-3</td><td>Only a mentee who attended a completed session can review it</td><td>Ratings stay trustworthy</td></tr>
+            <tr><td class="num">BR-4</td><td>Verification links expire in 24 hours and reset links in 1 hour</td><td>Account security</td></tr>
+            <tr><td class="num">BR-5</td><td>The forgot-password form never reveals whether an email is registered</td><td>User privacy</td></tr>
+            <tr><td class="num">BR-6</td><td>Suspending a user or resetting a password signs them out on every device</td><td>Admin actions take effect immediately</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>Non-functional requirements</h3>
+        <ul class="list">
+          <li>Passwords hashed; sessions stored in the database; private pages redirect signed-out visitors to login.</li>
+          <li>Works on phones as well as desktops.</li>
+          <li>Times shown in each user's own time zone.</li>
+        </ul>
+
+        <h3>Validation</h3>
+        <p>The end-to-end tests check the workflow and rules directly: request, accept, book, confirm and join; two mentees racing for the same slot; chat delivery; sign-up, verification and password reset; and that the forgot-password form gives nothing away.</p>
+      </div>
+    </section>
+
+    <section class="cs-sec" id="implementation">
+      <span class="eyebrow">06 · Implementation</span>
+      <h2>Two versions, one journey.</h2>
+      <div class="tbl-wrap"><table class="tbl">
+        <thead><tr><th></th><th>First version</th><th>Live version</th></tr></thead>
+        <tbody>
+          <tr><td>Stack</td><td>PHP, MySQL, HTML, CSS, JavaScript</td><td>Next.js, TypeScript, PostgreSQL, Prisma, Tailwind CSS</td></tr>
+          <tr><td>Purpose</td><td>Prove the concept and the core flows</td><td>Production release with tests and CI</td></tr>
+          <tr><td>Built by</td><td>Me</td><td>Shubham Kumar Singh</td></tr>
+          <tr><td>Repository</td><td><a href="https://github.com/PrachiYadav-16/mentorconnect" target="_blank" rel="noopener">PrachiYadav-16/mentorconnect</a></td><td><a href="https://github.com/shubhamrajput27/mentorconnect" target="_blank" rel="noopener">shubhamrajput27/mentorconnect</a></td></tr>
+        </tbody>
+      </table></div>
+      <p>The live version runs on Vercel with a Neon PostgreSQL database. Each session gets a Jitsi video link automatically, and emails for verification and password resets are sent through Resend.</p>
+      <div class="gallery">
+        <figure><div class="shot"><img src="../assets/img/mentorconnect-profile.webp" alt="Mentor profile with open time slots and a booking form" loading="lazy" width="1400" height="900"></div><figcaption>Mentor profile: book from open slots shown in your own time zone.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/mentorconnect-dashboard.webp" alt="Mentee dashboard with stats, upcoming sessions and recommended mentors" loading="lazy" width="1400" height="900"></div><figcaption>Mentee dashboard: upcoming sessions and recommended mentors.</figcaption></figure>
+        <figure><div class="shot"><img src="../assets/img/mentorconnect-sessions.webp" alt="Sessions page with a confirmed session and a join call button" loading="lazy" width="1400" height="900"></div><figcaption>Sessions: confirmed, with a one-click video call.</figcaption></figure>
+      </div>
+      <p class="muted" style="font-size:14px;">Screens from the live version running locally with the app's built-in demo accounts. Names and numbers are demo data.</p>
+    </section>
+
+    <section class="cs-sec" id="validation">
+      <span class="eyebrow">07 · Testing and validation</span>
+      <h2>Tested where it could break.</h2>
+      <ul class="list">
+        <li>12 unit tests for time zone handling and input validation.</li>
+        <li>9 end-to-end browser tests, including the full request-to-call journey, double booking, chat between two users, photo upload, admin suspension and the mobile menu.</li>
+        <li>A CI pipeline runs lint, type check, unit tests, build and end-to-end tests on every change.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="outcomes">
+      <span class="eyebrow">08 · Outcomes and learnings</span>
+      <h2>What came out of it.</h2>
+      <p>The full mentorship journey is live as a public demo with seeded mentor and mentee accounts. It has not been launched to real users, so there are no adoption numbers to report.</p>
+      <h3>What I learned</h3>
+      <ul class="list">
+        <li>A first prototype is a tool for deciding scope. Building it made it clear which flows were essential and which could wait.</li>
+        <li>Trust rules, like who may leave a review, are product decisions as much as technical ones.</li>
+      </ul>
+    </section>
+
+    <section class="cs-sec" id="future">
+      <span class="eyebrow">09 · Future opportunities</span>
+      <h2>Where it could go next.</h2>
+      <ul class="list">
+        <li>Real-time chat, and email reminders for bookings and messages.</li>
+        <li>Payments for paid sessions.</li>
+        <li>Pilot with a college mentoring program to measure request acceptance and session completion rates.</li>
+      </ul>
+    </section>
+
+    <div class="next-cs">
+      <a href="fraudnet-synth.html"><small>Next case study</small><strong>FraudNet-Synth</strong></a>
+      <a href="ai-interviewer.html"><small>Also read</small><strong>AI Voice Interviewer</strong></a>
+    </div>
+  </article>
+</div>
+</main>
+
+<section class="cta" style="padding: 80px 0 70px;">
+  <div class="wrap">
+    <h2 style="font-size: clamp(32px,4.5vw,56px);">Have a product challenge <span class="it">in mind?</span></h2>
+    <div class="cta-actions" style="margin-top:26px;">
+      <a class="btn btn-dark" href="mailto:y16prachi04@gmail.com">Email me</a>
+      <a class="btn btn-light" href="../assets/resume/Prachi_Yadav_Resume.pdf" download>Download resume</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <nav aria-label="Footer"><a href="../index.html">Home</a><a href="../index.html#projects">Projects</a><a href="../index.html#contact">Contact</a></nav>
+    <span>© <span id="year">2026</span> Prachi Yadav</span>
+  </div>
+  <div class="giant" aria-hidden="true">Prachi Yadav</div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
