@@ -39,7 +39,7 @@ Any static file server works. Opening `index.html` directly also works.
 
 **GitHub Pages:** in the repository go to *Settings > Pages*, choose *Deploy from a branch*, select `main` and `/ (root)`.
 
-After deploying, update `og:image` in each page's `<head>` to the full URL (for example `https://pportfolio.vercel.app/assets/img/og.png`). Link previews on LinkedIn need an absolute URL.
+Live at https://prachi-yadav-work.vercel.app. If the domain changes, update `canonical`, `og:url` and `og:image` in each page's `<head>`.
 
 ## Updating content
 

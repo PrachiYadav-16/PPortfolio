@@ -34,5 +34,4 @@ Tested on 2 Nov 2026 with Chromium (Playwright) against a local static server.
 
 ## Known gaps
 
-- The resume PDF is an interim version until Prachi provides her own.
-- `og:image` uses a relative path until the site has a domain.
+- None. Link previews use absolute URLs on prachi-yadav-work.vercel.app.

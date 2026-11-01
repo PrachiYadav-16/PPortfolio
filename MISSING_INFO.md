@@ -2,13 +2,12 @@
 
 ## Still needed
 
-1. **Resume PDF.** Save it as `assets/resume/Prachi_Yadav_Resume.pdf`, keeping that name. Until then the site uses an interim copy of the PM resume made on 2 Nov 2026, with the UI/UX portfolio link removed.
+Nothing blocking. The final resume (Res_9) is in place.
 
 ## To check after deploying
 
-- The live demo links (vayu-aqi.onrender.com, mentorconnect-alpha.vercel.app) could not be opened from the build environment. Open both once to confirm they load.
-- Set `og:image` to the absolute URL of `assets/img/og.png` on each page.
-- Add the new portfolio URL to the resume and LinkedIn.
+- The live demo links (vayu-aqi.onrender.com, mentorconnect-alpha.vercel.app, ai-voice-interviewer-lyart.vercel.app) could not be opened from the build environment. Open both once to confirm they load.
+- Add the portfolio URL to LinkedIn.
 
 ## Decisions already applied
 
